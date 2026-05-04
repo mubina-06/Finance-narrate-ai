@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinanceNarrate AI — Executive Financial Insight Engine</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Loading Spinner Overlay -->
+  <div id="spinner" class="spinner-overlay" hidden>
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Error Banner -->
+  <div id="error-banner" class="error-banner" hidden>
+    <span id="error-message"></span>
+    <button class="error-dismiss" onclick="dismissError()">✕</button>
+  </div>
+
+  <div class="container">
+    <header class="app-header">
+      <h1>FinanceNarrate AI</h1>
+      <p class="subtitle">Executive Financial Insight Engine</p>
+    </header>
+
+    <!-- Upload Section -->
+    <section class="section">
+      <h2>Upload Financial Data</h2>
+      <div id="upload-zone" class="upload-zone">
+        <div class="upload-icon">📂</div>
+        <p class="upload-text">Drag &amp; drop your file here, or click to browse</p>
+        <p class="upload-hint">Accepts .csv, .xlsx, .xls</p>
+        <input type="file" id="file-input" accept=".csv,.xlsx,.xls" />
+      </div>
+      <div id="status-area" class="status-area"></div>
+    </section>
+
+    <!-- Preview Table -->
+    <section class="section" id="preview-section" hidden>
+      <h2>Data Preview (first 10 rows)</h2>
+      <div id="preview-table-container" class="table-container"></div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="section" id="charts-section" hidden>
+      <h2>Financial Charts</h2>
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Revenue Trend</h3>
+          <div class="chart-container">
+            <canvas id="revenue-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>Top Expense Categories</h3>
+          <div class="chart-container">
+            <canvas id="expense-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anomaly Cards -->
+    <section class="section" id="anomaly-section" hidden>
+      <h2>Anomaly Alerts</h2>
+      <div id="anomaly-container"></div>
+    </section>
+
+    <!-- Executive Narrative Panel -->
+    <section class="section" id="narrative-section" hidden>
+      <h2>Executive Narrative</h2>
+      <div id="narrative-panel" class="narrative-panel">
+        <div class="narrative-block" id="narrative-summary-block">
+          <h3>Executive Summary</h3>
+          <p id="narrative-summary"></p>
+        </div>
+        <div class="narrative-block" id="narrative-trends-block">
+          <h3>Revenue Trends</h3>
+          <ul id="narrative-trends"></ul>
+        </div>
+        <div class="narrative-block" id="narrative-anomalies-block">
+          <h3>Anomalies</h3>
+          <ul id="narrative-anomalies"></ul>
+        </div>
+        <div class="narrative-block" id="narrative-recommendations-block">
+          <h3>Recommendations</h3>
+          <ol id="narrative-recommendations"></ol>
+        </div>
+      </div>
+      <div class="report-actions">
+        <button id="copy-btn" class="btn btn-secondary" disabled>📋 Copy Report</button>
+        <button id="download-btn" class="btn btn-primary" disabled>⬇ Download as .txt</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
